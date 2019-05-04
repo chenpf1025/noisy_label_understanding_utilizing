@@ -47,11 +47,11 @@ Experimrental resluts justify our theoretical analysis. To reproduce the experim
 
 Test accuracy, label precision and label recall w.r.t noise ratio on manually corrupted CIFAR-10. 
 
-![image](https://github.com/chenpf1025/noisy-labels/blob/master/results/LPLR.png)
+![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/LPLR.png)
 
 Confusion matrix M approximates noise transistion matrix T.
 
-![image](https://github.com/chenpf1025/noisy-labels/blob/master/results/Confusion.png)
+![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/Confusion.png)
 
 ## Identifying clean labels and robustly train deep neural networks
 **Note**
@@ -85,7 +85,7 @@ Average test accuracy (%, 5 runs) with standard deviation:
 
 Average test accuracy (%, 5 runs) during training:
 
-![image](https://github.com/chenpf1025/noisy-labels/blob/master/results/TestAcc.png)
+![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/TestAcc.png)
 
 ## Cite
 Please cite our paper if you use this code in your research work.
