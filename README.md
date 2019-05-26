@@ -1,12 +1,12 @@
 # Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels
-This is the Keras implementation for the ICML 2019 paper 'Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels'.
+This is a Keras implementation for the paper 'Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels'. It is accepted to appear in ICML, 2019.
 
 
 ```
-@inproceedings{chen2019understanding,
+@article{chen2019understanding,
   title={Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels},
-  author={Pengfei Chen, Benben Liao, Guangyong Chen, Shengyu Zhang},
-  booktitle={ICML},
+  author={Chen, Pengfei and Liao, Benben and Chen, Guangyong and Zhang, Shengyu},
+  journal={arXiv preprint arXiv:1905.05040},
   year={2019}
 }
 ```
