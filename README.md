@@ -3,10 +3,10 @@ This is a Keras implementation for the paper '[Understanding and Utilizing Deep 
 
 
 ```
-@InProceedings{chen2019understanding,
+@inproceedings{chen2019understanding,
   title={Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels},
   author={Chen, Pengfei and Liao, Ben Ben and Chen, Guangyong and Zhang, Shengyu},
-  booktitle={Proceedings of the 36th International Conference on Machine Learning},
+  booktitle={International Conference on Machine Learning},
   pages={1062--1070},
   year={2019}
 }
