@@ -146,6 +146,8 @@ for iter in range(1,INCV_iter+1):
         product = np.sum(top_True)/(n_train/2.)
         while (1-eval_ratio)*(1-eval_ratio)+eval_ratio*eval_ratio/(n_classes/Num_top-1) > product:
             eval_ratio += 0.001
+            if eval_ratio>=1:
+                break
         print('noisy ratio evaluation: %.4f\n' % eval_ratio)
         discard_ratio = min(2, eval_ratio/(1-eval_ratio))       
         discard_idx = val2_idx[np.argsort(cross_entropy)[-int(discard_ratio*np.sum(top_True)):]] # integer index
@@ -199,8 +201,12 @@ for iter in range(1,INCV_iter+1):
 ##################################################################################################################################
 """ Save INCV results """
 INCV_results = pd.DataFrame({'y':np.argmax(y_train,axis=1),
-                   'y_noisy':np.argmax(y_train_noisy,axis=1),
-                   'select':train_idx,
-                   'candidate':val_idx,
-                   'eval_ratio':eval_ratio})
-INCV_results.to_csv(os.path.join(save_dir,dataset+'_'+noise_pattern+str(noise_ratio)+'_INCV_results.csv'))
+                             'y_noisy':np.argmax(y_train_noisy,axis=1),
+                             'select':train_idx,
+                             'candidate':val_idx,
+                             'eval_ratio':eval_ratio})
+
+INCV_results.to_csv(
+        os.path.join(save_dir,dataset+'_'+noise_pattern+str(noise_ratio)+'_INCV_results.csv'),
+        index = False,
+        columns = ['y','y_noisy','select','candidate','eval_ratio'])
