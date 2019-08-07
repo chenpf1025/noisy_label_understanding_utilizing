@@ -71,9 +71,11 @@ The results will be saved in 'results/(dataset)/(noise_pattern)/(noise_ratio)/(X
 
 **Results**
 
-```label precision``` and ```label recall``` on cifar10.
+```label precision``` and ```label recall``` on  on the manually corrupted CIFAR-10.
 
 ![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/INCV.png)
+
+Our INCV accurately identifies most clean samples. For example, under symmetric noise of ratio 0.5, it selects about 90% (=LR) of the clean samples, and the noise ratio of the selected set is reduced to around 10% (=1−LP).
 
 ## Cleaning noisy datasets and robustly training deep neural networks
 **Note**
