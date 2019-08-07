@@ -12,12 +12,12 @@ import os
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--noisy_ratio',type=float)
+parser.add_argument('--noise_ratio',type=float)
 parser.add_argument('--noise_pattern',type=str)
 args = parser.parse_args()
 
 """ parameters """
-noisy_ratio = args.noisy_ratio
+noise_ratio = args.noise_ratio
 noise_pattern = args.noise_pattern #'sym' or 'asym'
 batch_size = 128
 epochs = 200
@@ -26,13 +26,13 @@ network = 'ResNet110'
 if not os.path.isdir(save_dir):
     os.makedirs(save_dir)
 filepath = os.path.join(save_dir,network+'.h5')
-print('\n#######################################\n noisy_ratio: %.2f noise_pattern: %s\n#######################################\n'
-      %(noisy_ratio,noise_pattern))
+print('\n#######################################\n noise_ratio: %.2f noise_pattern: %s\n#######################################\n'
+      %(noise_ratio,noise_pattern))
 
 #################################################################################################################################
 """ Data preparation """
 x_train, y_train, _, _, x_test, y_test = data.prepare_cifar10_data(data_dir='data/cifar-10-batches-py')
-y_train_noisy = data.flip_label(y_train, pattern=noise_pattern, ratio=noisy_ratio, one_hot=True)
+y_train_noisy = data.flip_label(y_train, pattern=noise_pattern, ratio=noise_ratio, one_hot=True)
 input_shape = list(x_train.shape[1:])
 n_classes = y_train.shape[1]
 n_train = x_train.shape[0]
@@ -121,10 +121,10 @@ print('Label Precision: %.4f'%(np.sum(clean_index[select_idx])/len(select_idx)))
 print('Label Recall: %.4f'%(np.sum(clean_index[select_idx])/np.sum(clean_index[val2_idx])))
 
 y_test_pred = np.argmax(parallel_model.predict(x_test), axis=1)
-np.save(save_dir+'/y_pred_'+noise_pattern+str(noisy_ratio)+'.npy',y_pred)
-np.save(save_dir+'/y_true_'+noise_pattern+str(noisy_ratio)+'.npy',np.argmax(y_train[val2_idx,:], axis=1))
-np.save(save_dir+'/y_test_pred_'+noise_pattern+str(noisy_ratio)+'.npy',y_test_pred)
-np.save(save_dir+'/y_test_true_'+noise_pattern+str(noisy_ratio)+'.npy',np.argmax(y_test, axis=1))
-print('Noise ratio: %.2f'%noisy_ratio)
+np.save(save_dir+'/y_pred_'+noise_pattern+str(noise_ratio)+'.npy',y_pred)
+np.save(save_dir+'/y_true_'+noise_pattern+str(noise_ratio)+'.npy',np.argmax(y_train[val2_idx,:], axis=1))
+np.save(save_dir+'/y_test_pred_'+noise_pattern+str(noise_ratio)+'.npy',y_test_pred)
+np.save(save_dir+'/y_test_true_'+noise_pattern+str(noise_ratio)+'.npy',np.argmax(y_test, axis=1))
+print('Noise ratio: %.2f'%noise_ratio)
 
 model.save(filepath)
