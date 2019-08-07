@@ -90,6 +90,7 @@ Average test accuracy (%, 5 runs) during training:
 
 ## Simply cleaning noisy datasets
 **Train**
+
 If you only want to use INCV to clean a noisy dataset, you can run INCV.py only, e.g., on CIFAR-10 with
 
 * 50% symmetric noise:
@@ -103,6 +104,7 @@ If you only want to use INCV to clean a noisy dataset, you can run INCV.py only,
 The results will be saved in 'results/(dataset)/(noise_pattern)/(noise_ratio)/(XXX.csv)' with columns ('y', 'y_noisy', 'select', 'candidate', 'eval_ratio').
 
 **Results**
+
 ```label precision``` and ```label recall``` on cifar10.
 ![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/LPLR.png)
 
