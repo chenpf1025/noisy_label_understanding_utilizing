@@ -71,7 +71,7 @@ The results will be saved in 'results/(dataset)/(noise_pattern)/(noise_ratio)/(X
 
 **Results**
 
-```label precision``` and ```label recall``` on  on the manually corrupted CIFAR-10.
+```label precision``` and ```label recall``` on the manually corrupted CIFAR-10.
 
 ![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/INCV.png)
 
