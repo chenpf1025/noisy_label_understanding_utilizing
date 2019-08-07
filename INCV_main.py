@@ -137,6 +137,8 @@ for iter in range(1,INCV_iter+1):
         product = np.sum(top_True)/(n_train/2.)
         while (1-eval_ratio)*(1-eval_ratio)+eval_ratio*eval_ratio/(n_classes/Num_top-1) > product:
             eval_ratio += 0.001
+            if eval_ratio>=1:
+                break
         print('noisy ratio evaluation: %.4f\n' % eval_ratio)
         discard_ratio = min(2, eval_ratio/(1-eval_ratio))       
         discard_idx = val2_idx[np.argsort(cross_entropy)[-int(discard_ratio*np.sum(top_True)):]] # integer index
