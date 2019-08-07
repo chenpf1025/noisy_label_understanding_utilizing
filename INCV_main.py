@@ -12,13 +12,13 @@ import os
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--noisy_ratio',type=float)
+parser.add_argument('--noise_ratio',type=float)
 parser.add_argument('--noise_pattern',type=str)
 parser.add_argument('--dataset',type=str)
 args = parser.parse_args()
 
 """ parameters """
-noisy_ratio = args.noisy_ratio
+noise_ratio = args.noise_ratio
 noise_pattern = args.noise_pattern #'sym' or 'asym'
 dataset = args.dataset
 
@@ -39,7 +39,7 @@ if dataset=='cifar10':
     x_train, y_train, _, _, x_test, y_test = data.prepare_cifar10_data(data_dir='data/cifar-10-batches-py')
     Num_top = 1 #using top k prediction
     
-y_train_noisy = data.flip_label(y_train, pattern=noise_pattern, ratio=noisy_ratio, one_hot=True)
+y_train_noisy = data.flip_label(y_train, pattern=noise_pattern, ratio=noise_ratio, one_hot=True)
 input_shape = list(x_train.shape[1:])
 n_classes = y_train.shape[1]
 n_train = x_train.shape[0]
@@ -252,8 +252,8 @@ if noise_pattern == 'sym':
 else:
     class_constant = 1
 
-noisy_ratio_selected = (eval_ratio*eval_ratio) / (eval_ratio*eval_ratio + class_constant*(1-eval_ratio)*(1-eval_ratio))
-print('Evaluated noisy of selected training set: %.4f\n'%noisy_ratio_selected)
+noise_ratio_selected = (eval_ratio*eval_ratio) / (eval_ratio*eval_ratio + class_constant*(1-eval_ratio)*(1-eval_ratio))
+print('Evaluated noisy of selected training set: %.4f\n'%noise_ratio_selected)
 
 # parameters of val set      
 batch_size_val = min(int(np.sum(val_idx)*batch_size/(np.sum(train_idx))), int(0.5*batch_size))
@@ -288,7 +288,7 @@ for e in range(epochs):
         model1.compile(optimizer=optimizers.Adam(lr, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0), loss='categorical_crossentropy', metrics = ['accuracy'])
         model2.compile(optimizer=optimizers.Adam(lr, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0), loss='categorical_crossentropy', metrics = ['accuracy'])
 
-    n_keep = round(batch_size*(1-noisy_ratio_selected*min(1,e/Tk)))
+    n_keep = round(batch_size*(1-noise_ratio_selected*min(1,e/Tk)))
     print("Epoch: %d/%d; Learning rate: %.7f; n_keep: %d\n" % (e+1, epochs, lr, n_keep))
     
     batches = 0
@@ -297,7 +297,7 @@ for e in range(epochs):
                                                     x_train[val_idx,:], y_train_noisy[val_idx,:],
                                                     batch_size_S=batch_size, batch_size_val=batch_size_val):
         
-        n_keep = round(len(x_S)*(1-noisy_ratio_selected*min(1,e/Tk))) # the last batch size may not be 128
+        n_keep = round(len(x_S)*(1-noise_ratio_selected*min(1,e/Tk))) # the last batch size may not be 128
         if e<=e_warm_up:
             # select samples based on model 1
             y_pred = model1.predict(x_S)
