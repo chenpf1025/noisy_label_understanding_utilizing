@@ -38,11 +38,11 @@ Experimrental resluts justify our theoretical analysis. To reproduce the experim
 
 * Symmetric noise with ratio 0.5:
 
-  ```python Verify_Theory.py --noise_pattern sym --noisy_ratio 0.5```
+  ```python Verify_Theory.py --noise_pattern sym --noise_ratio 0.5```
   
 * Asymmetric noise with ratio 0.4:
 
-  ```python Verify_Theory.py --noise_pattern asym --noisy_ratio 0.4``` 
+  ```python Verify_Theory.py --noise_pattern asym --noise_ratio 0.4``` 
 
 **Results**
 
@@ -65,11 +65,11 @@ E.g., use our method to train on CIFAR-10 with
 
 * 50% symmetric noise:
 
-  ```python INCV_main.py --noise_pattern sym --noisy_ratio 0.5 --dataset cifar10```
+  ```python INCV_main.py --noise_pattern sym --noise_ratio 0.5 --dataset cifar10```
   
 * 40% asymmetric noise:
 
-  ```python INCV_main.py --noise_pattern asym --noisy_ratio 0.4 --dataset cifar10```
+  ```python INCV_main.py --noise_pattern asym --noise_ratio 0.4 --dataset cifar10```
 
 **Results**
 
@@ -87,6 +87,24 @@ Average test accuracy (%, 5 runs) with standard deviation:
 Average test accuracy (%, 5 runs) during training:
 
 ![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/TestAcc.png)
+
+## Simply cleaning noisy datasets
+**Train**
+If you only want to use INCV to clean a noisy dataset, you can run INCV.py only, e.g., on CIFAR-10 with
+
+* 50% symmetric noise:
+
+  ```python INCV.py --noise_pattern sym --noise_ratio 0.5 --dataset cifar10```
+  
+* 40% asymmetric noise:
+
+  ```python INCV.py --noise_pattern asym --noise_ratio 0.4 --dataset cifar10```
+  
+The results will be saved in 'results/(dataset)/(noise_pattern)/(noise_ratio)/(XXX.csv)' with columns ('y', 'y_noisy', 'select', 'candidate', 'eval_ratio').
+
+**Results**
+```label precision``` and ```label recall``` on cifar10.
+![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/LPLR.png)
 
 ## Cite
 Please cite our paper if you use this code in your research work.
