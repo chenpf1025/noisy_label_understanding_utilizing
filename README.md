@@ -54,7 +54,28 @@ Confusion matrix M approximates noise transistion matrix T.
 
 ![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/Confusion.png)
 
-## Identifying clean labels and robustly train deep neural networks
+## Simply cleaning noisy datasets
+**Train**
+
+If you only want to use INCV to clean a noisy dataset, you can run INCV.py only, e.g., on CIFAR-10 with
+
+* 50% symmetric noise:
+
+  ```python INCV.py --noise_pattern sym --noise_ratio 0.5 --dataset cifar10```
+  
+* 40% asymmetric noise:
+
+  ```python INCV.py --noise_pattern asym --noise_ratio 0.4 --dataset cifar10```
+  
+The results will be saved in 'results/(dataset)/(noise_pattern)/(noise_ratio)/(XXX.csv)' with columns ('y', 'y_noisy', 'select', 'candidate', 'eval_ratio').
+
+**Results**
+
+```label precision``` and ```label recall``` on cifar10.
+
+![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/INCV.png)
+
+## Cleaning noisy datasets and robustly training deep neural networks
 **Note**
 
 We present the Iterative Noisy Cross-Validation (INCV) to select a subset of clean samples, then modify the [Co-teaching](https://arxiv.org/abs/1804.06872) strategy to train noise-robust deep neural networks. 
@@ -87,26 +108,6 @@ Average test accuracy (%, 5 runs) with standard deviation:
 Average test accuracy (%, 5 runs) during training:
 
 ![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/TestAcc.png)
-
-## Simply cleaning noisy datasets
-**Train**
-
-If you only want to use INCV to clean a noisy dataset, you can run INCV.py only, e.g., on CIFAR-10 with
-
-* 50% symmetric noise:
-
-  ```python INCV.py --noise_pattern sym --noise_ratio 0.5 --dataset cifar10```
-  
-* 40% asymmetric noise:
-
-  ```python INCV.py --noise_pattern asym --noise_ratio 0.4 --dataset cifar10```
-  
-The results will be saved in 'results/(dataset)/(noise_pattern)/(noise_ratio)/(XXX.csv)' with columns ('y', 'y_noisy', 'select', 'candidate', 'eval_ratio').
-
-**Results**
-
-```label precision``` and ```label recall``` on cifar10.
-![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/INCV.png)
 
 ## Cite
 Please cite our paper if you use this code in your research work.
