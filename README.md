@@ -115,4 +115,4 @@ Average test accuracy (%, 5 runs) during training:
 Please cite our paper if you use this code in your research work.
 
 ## Questions/Bugs
-Please submit a Github issue or contact pfchen@cse.cuhk.edu.hk if you have any questions or find any bugs.
+Please submit a Github issue or contact chenpf.cuhk@gmail.com if you have any questions or find any bugs.
