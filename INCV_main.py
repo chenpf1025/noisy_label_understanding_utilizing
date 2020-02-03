@@ -117,7 +117,7 @@ for iter in range(1,INCV_iter+1):
                                                   batch_size = batch_size),
                                   epochs = INCV_epochs,
                                   validation_data=(x_train[val2_idx,:], y_train_noisy[val2_idx,:]),
-                                  callbacks=[ModelCheckpoint(filepath=filepath_INCV, monitor='val_acc', verbose=1, save_best_only=INCV_save_best),
+                                  callbacks=[ModelCheckpoint(filepath=filepath_INCV, monitor='val_accuracy', verbose=1, save_best_only=INCV_save_best),
                                              noisy_acc,
                                              INCV_lr_callback])
     # Select samples of 'True' prediction
