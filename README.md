@@ -105,7 +105,7 @@ Average test accuracy (%, 5 runs) with standard deviation:
 |  [Co-teaching](https://arxiv.org/abs/1804.06872) | 89.05±0.32 |  82.12±0.59 | 16.21±3.02 | 84.55±2.81 |
 |   [MentorNet](https://arxiv.org/abs/1712.05055)  | 88.36±0.46 |  77.10±0.44 | 28.89±2.29 | 77.33±0.79 |
 |      [D2L](https://arxiv.org/abs/1806.02612)     | 86.12±0.43 | 67.39±13.62 | 10.02±0.04 | 85.57±1.21 |
-|     Ours     | 89.71±0.18 |  84.78±0.33 | 52.27±3.50 | 86.04±0.54 |
+|     Ours     | **89.71±0.18** |  **84.78±0.33** | **52.27±3.50** | **86.04±0.54** |
 
 Average test accuracy (%, 5 runs) during training:
 
