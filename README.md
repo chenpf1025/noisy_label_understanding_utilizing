@@ -13,7 +13,9 @@ This is a Keras implementation for the paper '[Understanding and Utilizing Deep 
 ```
 
 ## Dependencies
-Python 3, Keras, Tensorflow, numpy, sklearn
+Python 3.6.4, Keras 2.1.6, Tensorflow 1.7.0, numpy, sklearn
+
+
 
 ## Setup
 To set up experiments, we need to download the [CIFAR-10 data](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz) and extract it to:
