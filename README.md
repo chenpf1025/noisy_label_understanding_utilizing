@@ -15,7 +15,7 @@ This is a Keras implementation for the paper '[Understanding and Utilizing Deep 
 ## Dependencies
 Python 3.6.4, Keras 2.1.6, Tensorflow 1.7.0, numpy, sklearn.
 
-Please be aware of the **bug** caused by different **versions** of Keras/tf. For example, in the callback functions in model.fit_generator, new keras versions use "val_accuracy" instead of "val_acc", for which you may not directly get an error but may fail to save the model.
+Please be aware of the **bug** caused by different **versions** of Keras/tf. For example, in the callback functions in model.fit_generator, new keras versions use "val_accuracy" instead of "val_acc", for which you may not directly get an error but may fail to save the model. Please check the Documentation of Keras carefully if you use a different version.
 
 
 
