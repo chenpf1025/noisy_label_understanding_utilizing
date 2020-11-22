@@ -52,11 +52,11 @@ Experimrental resluts justify our theoretical analysis. To reproduce the experim
 
 Test accuracy, label precision and label recall w.r.t noise ratio on manually corrupted CIFAR-10. 
 
-![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/LPLR.png)
+<div align=center><img src="https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/LPLR.png" width = "75%"/></div>
 
 Confusion matrix M approximates noise transistion matrix T.
 
-![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/Confusion.png)
+<div align=center><img src="https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/Confusion.png" width = "75%"/></div>
 
 ## Simply cleaning noisy datasets
 **Train**
@@ -77,7 +77,7 @@ The results will be saved in 'results/(dataset)/(noise_pattern)/(noise_ratio)/(X
 
 ```label precision``` and ```label recall``` on the manually corrupted CIFAR-10.
 
-![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/INCV.png)
+<div align=center><img src="https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/INCV.png" width = "50%"/></div>
 
 Our INCV accurately identifies most clean samples. For example, under symmetric noise of ratio 0.5, it selects about 90% (=LR) of the clean samples, and the noise ratio of the selected set is reduced to around 10% (=1−LP).
 
@@ -113,7 +113,7 @@ Average test accuracy (%, 5 runs) with standard deviation:
 
 Average test accuracy (%, 5 runs) during training:
 
-![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/TestAcc.png)
+<div align=center><img src="https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/TestAcc.png" width = "100%"/></div>
 
 ## Cite
 Please cite our paper if you use this code in your research work.
