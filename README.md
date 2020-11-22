@@ -52,7 +52,7 @@ Experimrental resluts justify our theoretical analysis. To reproduce the experim
 
 Test accuracy, label precision and label recall w.r.t noise ratio on manually corrupted CIFAR-10. 
 
-![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/LPLR.png){:height="60%" width="60%"}
+![image](https://github.com/chenpf1025/noisy_label_understanding_utilizing/blob/master/results/LPLR.png)
 
 Confusion matrix M approximates noise transistion matrix T.
 
