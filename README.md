@@ -101,7 +101,7 @@ E.g., use our method to train on CIFAR-10 with
 **Results**
 
 Average test accuracy (%, 5 runs) with standard deviation:
-<div align=center>
+
 |    Method    |  Sym. 0.2  |   Sym. 0.5  |  Sym. 0.8  |  Aym. 0.4  |
 |:------------:|:----------:|:-----------:|:----------:|:----------:|
 | [F-correction](https://arxiv.org/abs/1609.03683) | 85.08±0.43 |  76.02±0.19 | 34.76±4.53 | 83.55±2.15 |
@@ -110,7 +110,7 @@ Average test accuracy (%, 5 runs) with standard deviation:
 |   [MentorNet](https://arxiv.org/abs/1712.05055)  | 88.36±0.46 |  77.10±0.44 | 28.89±2.29 | 77.33±0.79 |
 |      [D2L](https://arxiv.org/abs/1806.02612)     | 86.12±0.43 | 67.39±13.62 | 10.02±0.04 | 85.57±1.21 |
 |     Ours     | **89.71±0.18** |  **84.78±0.33** | **52.27±3.50** | **86.04±0.54** |
-</div>
+
 
 Average test accuracy (%, 5 runs) during training:
 
