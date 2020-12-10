@@ -1,5 +1,5 @@
 # Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels
-This is a Keras implementation for the paper [Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels](http://proceedings.mlr.press/v97/chen19g.html)'(Proceedings of ICML, 2019).
+This is a Keras implementation for the paper [Understanding and Utilizing Deep Neural Networks Trained with Noisy Labels](http://proceedings.mlr.press/v97/chen19g.html)(Proceedings of ICML, 2019).
 
 
 ```
